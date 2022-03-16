@@ -36,12 +36,14 @@ class Ship:
             self.x += self.settings.ship_speed
         if self.moving_left and self.rect.left > 0:
             self.x -= self.settings.ship_speed
+
+        # Update the ship's y value, not the rect.
         if self.moving_up and self.rect.top > 0:
             self.y -= self.settings.ship_vertical_speed
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.y += self.settings.ship_vertical_speed
 
-        # Update rect object from self.x
+        # Update rect object from self.x and self.y
         self.rect.x = self.x
         self.rect.y = self.y
 
